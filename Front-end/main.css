@@ -1,0 +1,17 @@
+@import url(fonts/Oswald-VariableFont_wght.ttf);
+
+* {
+  font-family: "Oswald", sans-serif;
+}
+.navbar-img {
+  width: 80px;
+}
+
+.course-list__course-logo,
+.opp-img {
+  width: 10rem;
+}
+
+.footer__logo {
+  width: 75%;
+}

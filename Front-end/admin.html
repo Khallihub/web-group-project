@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/logo.png" />
+    <link
+      rel="stylesheet"
+      href="bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Admin Dashboard - ZAcademy</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+          <a href="#" class="navbar-brand"
+            ><img class="navbar-img" src="img/logo.png" alt="ZAcademy logo" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navlinks"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-center" id="navlinks">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a href="Contact-us.html" class="nav-link">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="About-us.html" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="Login.html" class="nav-link">Log in</a>
+              </li>
+              <li class="nav-item">
+                <a href="Sign-up.html" class="nav-link">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container bg-white col-xs-12 col-lg-10 m-auto">
+      <h1 class="text-center">Welcome to Admin Dashboard</h1>
+
+      <div class="border border-1">
+        <div class="bg-success row m-auto">
+          <div class="col-xs-12 col-md-3 border border-1 text-center btn">
+            <btn id="addCourse_btn" class="btn text-white">Add Course</btn>
+          </div>
+          <div class="col-xs-12 col-md-3 border border-1 text-center btn">
+            <btn id="updateCourse_btn" class="btn text-white"
+              >Update Course</btn
+            >
+          </div>
+          <div class="col-xs-12 col-md-3 border border-1 text-center btn">
+            <btn id="deleteCourse_btn" class="btn text-white"
+              >Delete Course</btn
+            >
+          </div>
+          <div class="col-xs-12 col-md-3 border border-1 text-center btn">
+            <btn id="addTopic_btn" class="btn text-white">Add Topics</btn>
+          </div>
+        </div>
+
+        <div class="tabs-container">
+          <div class="tab-content p-2" id="addCourseTab" style="display: none">
+            <h1 class="text-center">Add Course</h1>
+            <label for="course_title">Course Name *:</label>
+            <input
+              class="d-block m-auto w-75"
+              id="course_title"
+              type="text"
+              placeholder="Course title"
+              required
+            />
+            <label for="describe">Course Description *:</label>
+            <textarea
+              class="d-block m-auto my-3 w-75"
+              name="description"
+              id="describe"
+              cols="30"
+              rows="10"
+              placeholder="write the course description here..."
+              required
+            ></textarea>
+
+            <button
+              class="btn btn-secondary d-block m-auto"
+              id="addCourseSubmit_btn"
+            >
+              Submit
+            </button>
+
+            <div id="addTab" class="m-auto border-1 container"></div>
+          </div>
+
+          <div
+            class="tab-content p-2"
+            id="updateCourseTab"
+            style="display: none"
+          >
+            <h1 class="text-center">Update Courses</h1>
+            <label for="course_name_old">Old Course Name:</label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              id="course_name_old"
+              type="text"
+              placeholder="enter the old name of the course"
+              required
+            />
+            <label for="course_name_new">New Course Name:</label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              id="course_name_new"
+              type="text"
+              placeholder="enter a new name for the course"
+              required
+            />
+            <label for="describe_new">Course Description:</label>
+            <textarea
+              class="d-block m-auto my-3 w-75"
+              id="describe_new"
+              type="text"
+              cols="30"
+              rows="10"
+              placeholder="Enter a new description for the course"
+              required
+            ></textarea>
+
+            <button
+              class="btn btn-secondary d-block m-auto"
+              id="updateCourseSubmit_btn"
+            >
+              Submit
+            </button>
+
+            <div id="updateTab" class="m-auto border-1 container"></div>
+          </div>
+
+          <div
+            class="tab-content p-2"
+            id="deleteCourseTab"
+            style="display: none"
+          >
+            <h1 class="text-center">Delete Course</h1>
+            <label for="course_name_del">Course Name:</label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              id="course_name_del"
+              type="text"
+              placeholder="enter the old name of the course"
+              required
+            />
+
+            <button
+              class="btn btn-secondary d-block m-auto"
+              id="deleteCourseSubmit_btn"
+            >
+              Submit
+            </button>
+            <div id="deleteTab" class="m-auto border-1 container"></div>
+          </div>
+
+          <div class="tab-content p-2" id="addTopicTab" style="display: none">
+            <h1 class="text-center">Add Topics</h1>
+            <label for="topic_course_topic">Course Name: </label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              type="text"
+              id="topic_course_topic"
+              placeholder="enter the course name"
+              required
+            />
+
+            <label for="topic_title">Topic Title: </label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              type="text"
+              id="topic_title"
+              placeholder="enter the topic title"
+              required
+            />
+
+            <label for="topic_body">Body: </label>
+            <textarea
+              class="d-block m-auto my-3 w-75"
+              class="d-block m-auto my-3 w-75"
+              id="topic_body"
+              type="text"
+              cols="30"
+              rows="10"
+              placeholder="Enter the body here..."
+              required
+            ></textarea>
+            <label for="topic_link">Video: </label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              type="text"
+              id="topic_link"
+              placeholder="enter video url (if any)"
+              required
+            />
+            <label for="topic_link_audio">Audio: </label>
+            <input
+              class="d-block m-auto my-3 w-75"
+              type="text"
+              id="topic_link_audio"
+              placeholder="enter audio url (if any)"
+              required
+            />
+
+            <label for="topic_transcript">Video Transcript: </label>
+            <textarea
+              class="d-block m-auto my-3 w-75"
+              type="text"
+              id="topic_transcript"
+              cols="30"
+              rows="10"
+              placeholder="enter video transcript (if any)"
+              required
+            ></textarea>
+
+            <button
+              class="btn btn-secondary d-block m-auto"
+              id="addTopicSubmit_btn"
+            >
+              Submit
+            </button>
+
+            <div id="addTopicTab" class="m-auto border-1 container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center text-lg-start bg-dark text-light">
+      <div class="container">
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto my-4 text-center">
+                <img
+                  class="footer__logo"
+                  src="img/logo.png"
+                  alt="ZAcademy logo"
+                />
+                <q style="font-style: italic">
+                  broadens the intellect and transforms the world. For a modern,
+                  worldwide educational experience, choose a modern, global
+                  school.
+                </q>
+              </div>
+
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto my-4">
+                <h6 class="text-uppercase fw-bold mb-4">Help</h6>
+                <p>
+                  <a href="about-us.html" class="text-reset">About Us</a>
+                </p>
+                <p>
+                  <a href="contact-us.html" class="text-reset">Contact Us</a>
+                </p>
+                <p>
+                  <a href="index.html#faqs" class="text-reset">FAQs</a>
+                </p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto my-4">
+                <h6 class="text-uppercase fw-bold mb-4">My Account</h6>
+                <p>
+                  <a href="login.html" class="text-reset">Log in</a>
+                </p>
+                <p>
+                  <a href="Sign-up.html" class="text-reset">Sign up</a>
+                </p>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Follow us on</h6>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          class="text-center p-4"
+          style="background-color: rgba(0, 0, 0, 0.05)"
+        >
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="index.html">ZAcademy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="admin.js"></script>
+    <script src="bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
